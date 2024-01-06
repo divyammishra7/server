@@ -14,7 +14,7 @@ app.listen(3001, () => {
 
 let isFetching = false; // Flag to track ongoing fetch operation
 
-cron.schedule('14 16 * * *', async () => {
+cron.schedule('40 16 * * *', async () => {
   if (!isFetching) {
     isFetching = true; // Set flag to true to indicate an ongoing fetch operation
 
