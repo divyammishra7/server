@@ -1,3 +1,5 @@
+const data=['JAIPUR', 'AJMER']
+
 require('dotenv').config();
 const express = require('express');
 const cron = require('node-cron');
@@ -11,7 +13,10 @@ app.get('/', (req, res) => {
 app.listen(3001, () => {
   console.log('Server running on port 3001');
 });
-cron.schedule('54 9 * * *', async () => {
+data.map((item)=>{
+  console.log(item);
+})
+cron.schedule('50 19 * * *', async () => {
   if (!isFetching) {
     isFetching = true; // Set flag to true to indicate an ongoing fetch operation
 
@@ -24,6 +29,7 @@ cron.schedule('54 9 * * *', async () => {
       }
       try {
         // Make the API call using Axios (replace with your API URL)
+        
         const response = await axios.get(process.env.API_KEY_FIRST);
         
         const data = response.data;
@@ -52,21 +58,24 @@ cron.schedule('54 9 * * *', async () => {
 });
 
 
+
 let isFetching = false; // Flag to track ongoing fetch operation
 
-cron.schedule('59 9 * * *', async () => {
+cron.schedule('55 19 * * *', async () => {
  
  
     
       try {
         // Make the API call using Axios (replace with your API URL)
-        const response = await axios.get(process.env.API_KEY_SECOND);
+        data.map(async(item)=>{
+        const response = await axios.get(`${process.env.API_KEY_SECOND}${item}`);
         
         const data = response.data;
         // Process the fetched data here
         console.log('Fetched data:', data);
 
         // Clear interval when data is fetched successfully
+      })
         
       } catch (error) {
         console.error('Error fetching data:', error);
