@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 app.listen(3001, () => {
   console.log('Server running on port 3001');
 });
-cron.schedule('25 8 * * *', async () => {
+cron.schedule('32 8 * * *', async () => {
   if (!isFetching) {
     isFetching = true; // Set flag to true to indicate an ongoing fetch operation
 
@@ -54,7 +54,7 @@ cron.schedule('25 8 * * *', async () => {
 
 let isFetching = false; // Flag to track ongoing fetch operation
 
-cron.schedule('30 8 * * *', async () => {
+cron.schedule('36 8 * * *', async () => {
  
  
     
