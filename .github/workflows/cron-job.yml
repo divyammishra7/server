@@ -2,7 +2,7 @@ name: Scheduled Job
 
 on:
   schedule:
-    - cron: '32 8 * * *'  # Runs the job at 13:00 UTC every day
+    - cron: '35 8 * * *'  # Runs the job at 13:00 UTC every day
 
 env:
   API_KEY_FIRST: ${{secrets.API_KEY_FIRST}}
