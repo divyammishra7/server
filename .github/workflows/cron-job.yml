@@ -1,8 +1,8 @@
-name: Scheduled Node.js Job
+name: Scheduled Job
 
 on:
   schedule:
-    - cron: '45 12 * * *'  # Runs the job everyday  minutes (adjust as needed)
+    - cron: '00 13 * * *'  # Runs the job at 13:00 UTC every day
 
 jobs:
   run-script:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18.14.0'  # Specify your desired Node.js version
+          node-version: '14'  # Specify your desired Node.js version
 
       - name: Install dependencies
         run: npm install
