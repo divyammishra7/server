@@ -1,0 +1,24 @@
+name: Scheduled Job
+
+on:
+  schedule:
+    - cron: '00 13 * * *'  # Runs the job at 13:00 UTC every day
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify your desired Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run index.js with cron jobs
+        run: node index.js  # Replace 'index.js' with your Node.js script name and location
