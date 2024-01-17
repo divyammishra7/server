@@ -16,7 +16,7 @@ app.listen(3001, () => {
 data.map((item)=>{
   console.log(item);
 })
-cron.schedule('50 19 * * *', async () => {
+cron.schedule('55 19 * * *', async () => {
   if (!isFetching) {
     isFetching = true; // Set flag to true to indicate an ongoing fetch operation
 
@@ -61,7 +61,7 @@ cron.schedule('50 19 * * *', async () => {
 
 let isFetching = false; // Flag to track ongoing fetch operation
 
-cron.schedule('55 19 * * *', async () => {
+cron.schedule('00 20 * * *', async () => {
  
  
     
